@@ -1,10 +1,16 @@
-const { Model, DataTypes } = require("sequelize");
+const { Model, DataTypes, UUIDV4 } = require("sequelize");
 
 module.exports = (sequelize) => {
   class Games extends Model {}
 
   Games.init(
     {
+      id: {
+        type: DataTypes.UUID,
+        defaultValue: UUIDV4,
+        allowNull: false,
+        primaryKey: true,
+      },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -13,6 +19,10 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
+      },
+      gameType: {
+        type: DataTypes.STRING,
+        allowNull: true,
       },
     },
     {

@@ -1,14 +1,12 @@
-import clsxm from "../../lib/clsxm";
 import React, { ComponentProps, useState } from "react";
+import { DiscordAuthLink, GoogleAuthLink } from "../../components/links";
 import Layout from "../../components/sections/registration/RegistrationLayout";
-import {
-    DiscordAuthLink,
-    GoogleAuthLink,
-    PolygonAuthLink,
-} from "../../components/links";
+import clsxm from "../../lib/clsxm";
+
+import QrCodeModal from "@/components/modal/QrCodeModal";
 import { HTMLMotionProps, motion } from "framer-motion";
 import BackArrow from "../../assets/icons/back_arrow.svg";
-import QrCodeModal from "@/components/modal/QrCodeModal";
+import { ConnectWalletButton } from "@/components/ConnectButton";
 const SignIn = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
@@ -21,11 +19,7 @@ const SignIn = () => {
                 className="absolute top-0 z-40 w-full "
             >
                 <div className="flex flex-col h-[350px]  mt-10 space-y-6">
-                    <PolygonAuthLink
-                        onClick={() => {
-                            setIsOpen(true);
-                        }}
-                    />
+                    <ConnectWalletButton />
                     <DiscordAuthLink />
                     <GoogleAuthLink />
                 </div>
@@ -46,7 +40,7 @@ export const Card: React.FC<
     } & {
         children?: React.ReactNode;
     }
-> = ({ className, title, subtitle, showTerms, children, ...rest }) => {
+> = ({ className, title, subtitle, children, ...rest }) => {
     return (
         <motion.div
             className={clsxm(

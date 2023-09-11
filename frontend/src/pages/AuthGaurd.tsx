@@ -5,6 +5,7 @@ import { useAppDispatch } from "../redux/hooks";
 import { oAuthApi } from "../redux/api/oAuth";
 import { userApi } from "../redux/api/user";
 import Home from ".";
+import { useAccount } from "wagmi";
 
 const isSourceGoogle = (hash: string) => {
     return hash.includes(GOOGLE_API_URL_CHECK);
@@ -23,12 +24,18 @@ const AuthGaurd = React.forwardRef<
 >(({ children, ...rest }, ref) => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
+    const { address } = useAccount();
     const [isLoading, setIsLoading] = useState(true);
 
     React.useLayoutEffect(() => {
         setIsLoading(true);
         parseToken()
             .then(async (response) => {
+                if (address) {
+                    setIsLoading(false);
+                    navigate("/register");
+                    return;
+                }
                 if (response.turf_access_token) {
                     dispatch(userApi.endpoints.getUser.initiate())
                         .unwrap()
@@ -104,7 +111,7 @@ const AuthGaurd = React.forwardRef<
                 });
             });
         //eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [location.pathname]);
+    }, [location.pathname, address]);
 
     if (isLoading) return <Home />;
     return (

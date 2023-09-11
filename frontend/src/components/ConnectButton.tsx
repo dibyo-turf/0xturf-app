@@ -9,7 +9,6 @@ export const ConnectWalletButton = () => {
                 account,
                 chain,
                 openAccountModal,
-                openChainModal,
                 openConnectModal,
                 authenticationStatus,
                 mounted,
@@ -45,7 +44,7 @@ export const ConnectWalletButton = () => {
                                         <img
                                             src={MetamaskLogo}
                                             alt="metmask"
-                                            className="mr-4 w-[20px] h-[20px]"
+                                            className="mr-4 w-[25px] h-[25px]"
                                         />
                                         Connect with metamask
                                     </Button>

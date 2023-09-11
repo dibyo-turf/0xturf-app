@@ -14,7 +14,7 @@ export enum AUTH_KEYS {
     DISCORD = "x-discord-auth",
     GOOGLE = "x-google-auth",
     ACCESS_TOKEN = "access_token",
-    TURF_ACCESS_TOKEN = "access_token",
+    TURF_ACCESS_TOKEN = "turf_access_token",
     TURF_REFRESH_TOKEN = "refresh_token",
 }
 const AuthGaurd = React.forwardRef<

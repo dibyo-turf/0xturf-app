@@ -1,0 +1,56 @@
+.input_field {
+@apply px-4;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  color: #fff;
+  border: 1px solid #757575;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.input_field::placeholder {
+  color: transparent;
+}
+
+.input_field:placeholder-shown ~ .input_label {
+  font-size: 16px;
+  cursor: text;
+  top: 12px;
+  color: #757575;
+  left: 10px;
+}
+
+.input_field:placeholder-shown ~ .input_label_2 {
+  font-size: 16px;
+  cursor: text;
+  top: 12px;
+  color: #757575;
+  left: 30px;
+}
+
+label,
+.input_field:focus ~ .input_label {
+    @apply px-1;
+  position: absolute;
+  top: -9px;
+  display: block;
+  left: 10px;
+  transition: 0.2s;
+  font-size: 12px;
+  background-color: #090015;
+color: #757575;
+}
+label,
+.input_field:focus ~ .input_label_2 {
+    @apply px-1;
+  position: absolute;
+  top: -9px;
+  display: block;
+  left: 10px;
+  transition: 0.2s;
+  font-size: 12px;
+  background-color: #090015;
+}
+

@@ -1,0 +1,23 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+tbody tr:nth-child(odd):not(thead) {
+    background-color: #2b1c47;
+}
+
+tr td:first-child {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+tr td:last-child {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}

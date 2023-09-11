@@ -1,0 +1,95 @@
+.layout {
+    @apply min-h-screen relative flex h-screen w-full justify-between;
+    width: 100%;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+.fade-in.active {
+    opacity: 1;
+}
+
+.image_1 {
+    @apply bg-cover bg-no-repeat bg-right;
+    background-image: url("../../../assets/background_1.webp");
+}
+
+.image_2 {
+    @apply bg-cover bg-no-repeat bg-right;
+
+    background-image: url("../../../assets/background_2.webp");
+}
+
+.image_3 {
+    @apply bg-cover bg-no-repeat bg-right;
+
+    background-image: url("../../../assets/background_3.webp");
+}
+
+.image_4 {
+    @apply bg-cover bg-no-repeat bg-right;
+
+    background-image: url("../../../assets/background_4.webp");
+}
+
+.image_5 {
+    @apply bg-cover bg-no-repeat bg-right;
+    background-image: url("../../../assets/background_5.webp");
+}
+
+.image_6 {
+    @apply bg-cover bg-no-repeat bg-right;
+    background-image: url("../../../assets/background_6.webp");
+}
+
+.image_7 {
+    @apply bg-cover bg-no-repeat bg-right;
+    background-image: url("../../../assets/background_7.webp");
+}
+
+.form_section {
+    @apply lg:w-[50%] h-full flex items-center justify-center;
+}
+
+.form_section .card {
+    @apply p-4 flex flex-col justify-between absolute;
+    width: 420px;
+    height: 650px;
+    border-radius: 8px;
+    background: linear-gradient(0deg, #090015, #090015),
+        linear-gradient(0deg, #282230, #282230);
+    border: 1px solid #282230;
+}
+
+.form_section .card_bg {
+    @apply border border-[#282230];
+
+    background: linear-gradient(0deg, #090015, #090015),
+        linear-gradient(0deg, #282230, #282230);
+}
+
+.suggestion {
+    @apply px-3 text-sm flex items-center justify-center cursor-pointer;
+    height: 32px;
+    font-weight: 500;
+    border-radius: 48px;
+}
+
+.unselected {
+    color: #757575;
+    border: 1px solid #757575;
+    background: transparent;
+}
+
+.selected {
+    @apply bg-[#7C40E4] bg-opacity-[0.25];
+    color: #7c40e4;
+    border: 1px solid #7c40e4;
+}
+
+.select_panel {
+    box-shadow: 0px 0px 0px 3px #7c40e433, 0px 0px 0px 1px #7c40e4;
+}

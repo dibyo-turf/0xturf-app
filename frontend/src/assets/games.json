@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1ed343db-e129-4504-b5a8-21104e001124",
+        "name": "Valorant",
+        "summary": "Valorant is a free-to-play first-person tactical hero shooter developed and published by Riot Games, for Windows. Teased under the codename Project A in October 2019, the game began a closed beta period with limited access on April 7, 2020, followed by a release on June 2, 2020.",
+        "release_date": "June 2, 2020",
+        "game_type": ["Hero", "Tactical", "Shooter"],
+        "platform": "PC",
+        "banner": "https://static.vecteezy.com/system/resources/previews/022/636/388/non_2x/valorant-logo-valorant-icon-transparent-free-png.png"
+    },
+    {
+        "id": "762af2a5-ab2e-46bb-9f00-edc13d2b9848",
+        "name": "League of Legends",
+        "summary": "League of Legends, commonly referred to as League, is a 2009 multiplayer online battle arena video game developed and published by Riot Games. Inspired by Defense of the Ancients, a custom map for Warcraft III, Riot's founders sought to develop a stand-alone game in the same genre.",
+        "release_date": "27 October 2009",
+        "game_type": ["multiplayer online battle arena"],
+        "platform": "PC",
+        "banner": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/League_of_Legends_2019_vector.svg/1200px-League_of_Legends_2019_vector.svg.png"
+    }
+]

@@ -1,3 +1,4 @@
+const db = require("../models/index.js");
 const express = require("express");
 const router = express.Router();
 const { User } = require("../models");
@@ -44,6 +45,29 @@ router.get("/verify", async (req, res) => {
 
     const user = await getUserDetails(turfId);
     res.json(user);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+router.get("/search", async (req, res) => {
+  try {
+    const { query_value } = req.query;
+
+    if (!query_value) {
+      return res.status(400).json({ error: "Search query is required" });
+    }
+
+    const users = await User.findAll({
+      where: {
+        turf_id: {
+          [db.Sequelize.Op.like]: "%" + query_value + "%",
+        },
+      },
+    });
+
+    res.json(users);
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Internal Server Error" });

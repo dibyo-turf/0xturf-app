@@ -3,6 +3,7 @@ import { useRegisterMutation } from "@/redux/api/oAuth";
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../button";
+import { useAccount } from "wagmi";
 
 const URI = `https://turf-assets-test.s3.ap-south-1.amazonaws.com/avatars/avatar1.png`;
 
@@ -10,8 +11,10 @@ export const getImage = (index: number) =>
     `https://turf-assets-test.s3.ap-south-1.amazonaws.com/avatars/avatar${index}.png`;
 
 const ChooseAvatar = () => {
-    const { setShowLoader, registrationData, setCurrentStep, currentStep } =
-        useContext(RegistrationStepsContext);
+    const { setShowLoader, registrationData } = useContext(
+        RegistrationStepsContext
+    );
+    const { address } = useAccount();
     const navigate = useNavigate();
 
     const [registerUser] = useRegisterMutation();
@@ -59,7 +62,7 @@ const ChooseAvatar = () => {
                                 }
                             );
                             await registerUser({
-                                game_preferences: game_preferences,
+                                address: address,
                                 turfId: registrationData.turfId,
                                 image: getImage(selectedAvatar),
                             }).unwrap();

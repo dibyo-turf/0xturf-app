@@ -1,6 +1,6 @@
 import React from "react";
 
-import ValoStatsInfo from "./ValoStatsInfo";
+import ValoStatsInfo, { IcePokerInfo } from "./ValoStatsInfo";
 import Heading from "@/components/typography/Heading";
 import GamerInfo from "./GamerInfo";
 import { AnimatePresence, motion } from "framer-motion";
@@ -34,15 +34,17 @@ const PortfolioSection = ({
         <div className="mt-10">
             <UserDetails currentUser={data} turf_id={turf_id} />
             <GamerInfo currentUser={data} turf_id={turf_id} />
-            {data && data?.connected_games && (
+            {/* {data && data?.connected_games && (
                 <>
                     <Heading className="mb-10">League Of Legends</Heading>
                     <StatsInfo data={data.connected_games[0]} />
                 </>
-            )}
+            )} */}
 
-            <Heading className="mb-10">Valorant</Heading>
+            <Heading className="mb-10">Planet X</Heading>
             <ValoStatsInfo />
+            <Heading className="mb-10">Ice Poker</Heading>
+            <IcePokerInfo />
             {user &&
                 user.turf_id === data?.turf_id &&
                 data?.connected_games === undefined && (

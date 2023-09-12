@@ -31,31 +31,26 @@ const AuthGaurd = React.forwardRef<
         setIsLoading(true);
         parseToken()
             .then(async (response) => {
-                if (address) {
-                    setIsLoading(false);
-                    navigate("/register");
-                    return;
-                }
                 if (response.turf_access_token) {
                     dispatch(userApi.endpoints.getUser.initiate())
                         .unwrap()
                         .then(() => {
-                            if (
-                                window.location.pathname === "/signin" ||
-                                window.location.pathname === "/register"
-                            )
-                                navigate("/", {
-                                    replace: true,
-                                });
-                            else {
-                                navigate(
-                                    window.location.pathname +
-                                        window.location.search,
-                                    {
-                                        replace: true,
-                                    }
-                                );
-                            }
+                            // if (
+                            //     window.location.pathname === "/signin" ||
+                            //     window.location.pathname === "/register"
+                            // )
+                            //     navigate("/", {
+                            //         replace: true,
+                            //     });
+                            // else {
+                            //     navigate(
+                            //         window.location.pathname +
+                            //             window.location.search,
+                            //         {
+                            //             replace: true,
+                            //         }
+                            //     );
+                            // }
                         })
                         .catch(() => {
                             window.localStorage.removeItem(
@@ -71,7 +66,7 @@ const AuthGaurd = React.forwardRef<
                 if (response.source === null || response.token === null) {
                     setIsLoading(false);
                     if (window.location.pathname === "/register") {
-                        navigate("/");
+                        // navigate("/");
                     } else {
                         navigate(
                             window.location.pathname + window.location.search,

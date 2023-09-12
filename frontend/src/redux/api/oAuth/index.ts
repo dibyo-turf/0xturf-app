@@ -46,11 +46,11 @@ export const oAuthApi = createApi({
             {
                 turfId: string;
                 image: string;
-                game_preferences: string[];
+                address: string;
             }
         >({
             query: (data) => ({
-                url: "account/register",
+                url: "users/register-login-metamask",
                 method: "POST",
                 body: data,
             }),

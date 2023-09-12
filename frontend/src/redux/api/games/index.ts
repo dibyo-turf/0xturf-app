@@ -22,7 +22,7 @@ export const gamesApi = api.injectEndpoints({
         }),
         searchUsers: builder.query<SearchUsersResponse, SearchUsersRequest>({
             query: ({ query_value }) => ({
-                url: `/user/verify?turfId=${query_value}`,
+                url: `/users/verify?turfId=${query_value}`,
             }),
             transformResponse: (response: { data: SearchUsersResponse }) => {
                 return response.data;

@@ -114,9 +114,7 @@ const Identity = () => {
                     </div>
                 )}
             </div>
-
             <div className="mb-4" />
-
             <CheckBox
                 checked={
                     registrationData.turfId.length >= 5 &&
@@ -126,7 +124,6 @@ const Identity = () => {
                     "Must be atleast 5 characters long and should not start or end with a special character"
                 }
             />
-
             <div className="h-[20px]" />
             {userNameValues.length > 0 && (
                 <Suggestions
@@ -141,14 +138,13 @@ const Identity = () => {
                     }}
                 />
             )}
-
             <Button
                 type="submit"
                 variant="primary"
-                disabled={
-                    !handleInputValidation(registrationData.turfId) ||
-                    apiState !== "success"
-                }
+                // disabled={
+                //     !handleInputValidation(registrationData.turfId) ||
+                //     apiState !== "success"
+                // }
                 className="w-[90%] absolute bottom-6"
             >
                 Continue

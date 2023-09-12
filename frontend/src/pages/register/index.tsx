@@ -1,18 +1,12 @@
-import Layout from "../../components/sections/registration/RegistrationLayout";
-import React, {
-    useState,
-    createContext,
-    useEffect,
-    useLayoutEffect,
-} from "react";
-import Identity from "../../components/sections/registration/Identity";
-import ChooseTurf from "../../components/sections/registration/ChooseTurf";
-import SignupLoader from "../../components/loaders/SignupLoader";
-import { BackButton, Card } from "../signin";
-import { motion, AnimatePresence } from "framer-motion";
 import ChooseAvatar from "@/components/sections/registration/ChooseAvatar";
 import { useAppSelector } from "@/redux/hooks";
+import { AnimatePresence, motion } from "framer-motion";
+import React, { createContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import SignupLoader from "../../components/loaders/SignupLoader";
+import Identity from "../../components/sections/registration/Identity";
+import Layout from "../../components/sections/registration/RegistrationLayout";
+import { BackButton, Card } from "../signin";
 const RegisterationSteps = [
     {
         id: 0,

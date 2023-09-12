@@ -2,7 +2,9 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import MetamaskLogo from "../assets/icons/metamask-icon.png";
 
 import Button from "./button";
+import { useNavigate } from "react-router-dom";
 export const ConnectWalletButton = () => {
+    const navigate = useNavigate();
     return (
         <ConnectButton.Custom>
             {({
@@ -39,7 +41,10 @@ export const ConnectWalletButton = () => {
                                     <Button
                                         variant="ghost"
                                         className="w-full"
-                                        onClick={openConnectModal}
+                                        onClick={() => {
+                                            openConnectModal();
+                                            navigate("/register");
+                                        }}
                                     >
                                         <img
                                             src={MetamaskLogo}

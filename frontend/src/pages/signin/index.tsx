@@ -1,4 +1,4 @@
-import React, { ComponentProps, useState } from "react";
+import React, { ComponentProps, useEffect, useState } from "react";
 import { DiscordAuthLink, GoogleAuthLink } from "../../components/links";
 import Layout from "../../components/sections/registration/RegistrationLayout";
 import clsxm from "../../lib/clsxm";
@@ -7,8 +7,19 @@ import QrCodeModal from "@/components/modal/QrCodeModal";
 import { HTMLMotionProps, motion } from "framer-motion";
 import BackArrow from "../../assets/icons/back_arrow.svg";
 import { ConnectWalletButton } from "@/components/ConnectButton";
+import { useAccount } from "wagmi";
+import { useNavigate } from "react-router-dom";
 const SignIn = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
+    const { address } = useAccount();
+
+    // useEffect(() => {
+    //     if (address) {
+    //         navigate("/register");
+    //     }
+    // }, [address]);
+
     return (
         <Layout>
             <QrCodeModal isOpen={isOpen} setIsOpen={setIsOpen} />

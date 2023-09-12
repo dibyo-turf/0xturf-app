@@ -22,6 +22,6 @@ export const GOOGLE_URL = `https://accounts.google.com/o/oauth2/v2/auth/oauthcho
     GOOGLE_CALLBACK_URL
 )}&scope=profile%20email&client_id=869064148873-5594tcbsv362kjc3jduks8mq2bemfdmm.apps.googleusercontent.com&service=lso&o2v=2&flowName=GeneralOAuthFlow`;
 
-export const API_URL = "https://d3fn8xwanmatys.cloudfront.net/v1/";
+export const API_URL = "https://13c4-128-106-146-87.ngrok-free.app";
 
 export const GOOGLE_API_URL_CHECK = "https://www.googleapis.com";

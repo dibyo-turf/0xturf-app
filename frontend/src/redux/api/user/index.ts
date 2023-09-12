@@ -1,4 +1,4 @@
-import { api, userApiwithTags } from "..";
+import { userApiwithTags } from "..";
 import { LoginResponse } from "../oAuth/types";
 import { GlobalSearchResponse } from "../search/types";
 import { UserSearchRequest, UserSearchResponse } from "./types";
